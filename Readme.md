@@ -11,7 +11,11 @@
     - Alpha
     - Neotree
     - Bufferline
-    - Colorcheme
+    - Colorscheme
+        - Gruvbox
+        - Kanagawa 
+        - Sonokai
+
 
 ## Custom Shortcut
 
@@ -20,7 +24,7 @@
 - `<M-w>`: Close current buffer
 - `<M-r>`: Vertical split
 - `<M-h / l>`: Move cursor focus on left / right split window
-- `<leader>-h / l`: Switch between buffers
+- `<leader>h / l`: Switch between buffers
 
 ### Telescope
 
