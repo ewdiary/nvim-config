@@ -14,6 +14,28 @@ return {
 
         neoTree.setup {
             source_selector = { winbar = false, statusline = false, },
+
+            default_component_configs = {
+                name = {
+                    use_git_status_colors = true,                                                               -- Git 狀態顏色標記
+                }, 
+                git_status = {                                                                                  -- Git 狀態顏色標記設定
+                    symbols = {
+                        -- Change type
+                        added     = "󰬈", -- or "✚", but this is redundant info if you use git_status_colors on the name
+                        modified  = "󰬔", -- or "", but this is redundant info if you use git_status_colors on the name
+                        deleted   = "",-- this can only be used in the git_status source
+                        renamed   = "",-- this can only be used in the git_status source
+                        -- Status type
+                        untracked = "󰬜",
+                        ignored   = "",
+                        unstaged  = "󰄱",
+                        staged    = "",
+                        conflict  = "",
+                    }
+                }, 
+            },
+
             window = { 
                 mappings = { 
                     ["P"] = {"toggle_preview", config = { use_float = true, use_image_nvim = false}},       -- 圖片預覽需使用其他支援之 terminal
@@ -23,6 +45,7 @@ return {
                     ["C"] = "toggle_node", 
                 },
             },
+
         }
 
       vim.keymap.set('n', '<M-e>', ':Neotree source=filesystem reveal=true position=float toggle=true selector=true<CR>')
